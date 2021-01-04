@@ -1,8 +1,12 @@
-/* Author: Nabil Mansour
-Date: 2020-12-19
-Description:
-Performs the parallel parking operation for Arduino Car
-as requested in CPS 607 final assignment */
+/*
+ * Author: Nabil Mansour
+ * Date: 2020-12-19
+ * Description:
+ *   Performs the parallel parking operation for Arduino Car
+ *  as requested in CPS 607 final assignment.
+ *   Will assume that the car will start from the right side facing the left side
+ *  as seen in the diagram (D1.jpg) provided.
+ */
 
 #include <Servo.h>
 #include <NewPing.h>
@@ -86,6 +90,7 @@ void ParallelPark()
   EnableMotor(0, 0);
   delay(250);
 
+  // #5
   EnableMotor(MAX_SPEED, MAX_SPEED);
   Rotate(true);
   distance_1 = 100;
@@ -94,7 +99,6 @@ void ParallelPark()
     Update_distance_1();
   }
 
-  // #5
   Rotate(false);
   delay(100);
 
